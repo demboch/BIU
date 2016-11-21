@@ -1,0 +1,30 @@
+div {
+    background: black;
+}
+
+#container {
+    padding: 20px;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+.btn-primary {
+    margin-left: 50px;
+}
+
+#table {
+    color: black; 
+}
+
+td {
+    border: 1px solid grey;
+    color: white;
+}
+
+button {
+    color: red;
+    background: black;
+    border: 1px solid grey; 
+}

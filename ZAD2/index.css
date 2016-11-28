@@ -15,7 +15,7 @@ div {
 }
 
 #table {
-    color: black; 
+    color: black;
 }
 
 td {
@@ -26,5 +26,9 @@ td {
 button {
     color: red;
     background: black;
-    border: 1px solid grey; 
+    border: 1px solid grey;
+}
+
+.hidden {
+    display: none
 }

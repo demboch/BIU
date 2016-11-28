@@ -1,18 +1,18 @@
-function PeopleTableViewModel(config) {
+function PeopleTableViewModel(config) { // konstruktor
     var self = this;
     self.people = new ListOfPeople();
     self.currentPage = 0;
     self.pageSize = config.pageSize;
     self.context = config.context;
-    
-    var getData = function (begin, end) {
+
+    var getData = function(begin, end) {
         if (end > data.length) {
             end = data.length;
         }
         if (begin < 0) {
             begin = 0;
         }
-        for (var i = begin; i<end; i+=1) {
+        for (var i = begin; i < end; i += 1) {
             self.people.addPerson(data[i]);
         }
     }
@@ -26,7 +26,7 @@ function PeopleTableViewModel(config) {
         self.currentPage++;
         self.context.innerHTML = self.people.toTable();
     };
-    
+
     self.change = function(pgSize) {
         //alert('zmień ilość');
         self.pageSize = pgSize;
@@ -37,7 +37,7 @@ function PeopleTableViewModel(config) {
     self.prev = function() {
         //alert('kliknąłęś poprzedni');
         self.people.clear();
-        if (self.currentPage-1 >= 0) {
+        if (self.currentPage - 1 >= 0) {
             self.currentPage--;
         }
         var begin = (self.currentPage) * self.pageSize;
@@ -45,11 +45,11 @@ function PeopleTableViewModel(config) {
         getData(begin, end);
         self.context.innerHTML = self.people.toTable();
     };
-    
+
     self.sort = function(comparer) {
+        comparator.setState();
         data.sort(comparer);
         self.currentPage = 0;
         self.next();
     };
 }
-

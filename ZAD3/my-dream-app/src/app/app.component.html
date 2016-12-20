@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<div *ngIf="selectedGun">
+    <h2>Selected weapon: {{selectedGun.name}}</h2>
+    <div><label>id: </label>{{selectedGun.id}}</div>
+    <div>
+        <label>like: </label>{{selectedGun.like}}
+    </div>
+    <div>
+        <label>weapon name: </label>
+        <input [(ngModel)]="selectedGun.name" placeholder="weapon name" />
+    </div>
+</div>
+<h2>List of guns</h2>
+<ul class="guns">
+    <li *ngFor="let gun of guns" [class.selected]="gun === selectedGun" (click)="onSelect(gun)">
+        <span class="badge">{{gun.id}}</span> {{gun.name}}
+        <div *ngIf="selectedGun" class="like">
+            <button class="button" (click)="licznik(selectedGun)">👍 Like it! {{gun.like}}</button>
+        </div>
+    </li>
+    <button class="sort" (click)="onSort()">Which gun has the most likes</button>
+</ul>

@@ -1,10 +1,10 @@
-import { MyDreamAppPage } from './app.po';
+import { Zadanie3Page } from './app.po';
 
-describe('my-dream-app App', function() {
-  let page: MyDreamAppPage;
+describe('zadanie3 App', function() {
+  let page: Zadanie3Page;
 
   beforeEach(() => {
-    page = new MyDreamAppPage();
+    page = new Zadanie3Page();
   });
 
   it('should display message saying app works', () => {

@@ -12,19 +12,19 @@ import { Component } from '@angular/core';
 
   .button {
     background-color: #6a00ff;
-    border: none;
     color: white;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     float: right;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .sort {
   cursor: pointer;
   padding:10px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #6a00ff; 
   font-size: 20px;
   font-weight: bold;
@@ -85,14 +85,11 @@ transform: scale(1.1);
   left: 120px;
   position: relative;
   top: -6px;
-
-}
-
-.like{
   float: right;
   margin-top: 8px;
   margin-right: 10px;
 }
+
 `]
 
 

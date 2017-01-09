@@ -2,111 +2,28 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  styles: [`
-  .selected {
-    background-color: #CFD8DC !important;
-    color: white;
-  }
-
-  .button {
-    background-color: #6a00ff;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    float: right;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.sort {
-  cursor: pointer;
-  padding:10px;
-  border-radius: 10px;
-  background-color: #6a00ff; 
-  font-size: 20px;
-  font-weight: bold;
-  transition: all .2s ease-in-out;
-  color: white;
-  margin-left: 20px;
-}
-
-.sort:hover {
-transform: scale(1.1);
-}
-
-  .guns {
-    margin: 0 0 2em 0;
-    list-style-type: none;
-    padding: 0;
-    width: 20em;
-  }
-  .guns li {
-    cursor: pointer;
-    position: relative;
-    left: 0;
-    background-color: #EEE;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
-    border-radius: 4px;
-  }
-  .guns li.selected:hover {
-    background-color: #BBD8DC !important;
-    color: white;
-  }
-  .guns li:hover {
-    color: #607D8B;
-    background-color: #DDD;
-    left: .1em;
-  }
-  .guns .text {
-    position: relative;
-    top: -3px;
-  }
-  .guns .badge {
-    display: inline-block;
-    font-size: small;
-    color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: black;
-    line-height: 1em;
-    position: relative;
-    left: -1px;
-    top: -4px;
-    height: 1.8em;
-    margin-right: .8em;
-    border-radius: 4px 0 0 4px;
-  }
-
-.like{
-  left: 120px;
-  position: relative;
-  top: -6px;
-  float: right;
-  margin-top: 8px;
-  margin-right: 10px;
-}
-
-`]
-
-
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
 
-    title = 'List of guns';
-    guns = GUNS;
-    gun: Gun = {id: 1,name: 'M4-A1', like:0};
-    selectedGun: Gun = this.gun;
+  title = 'List of guns';
+  guns = GUNS;
+  gun: Gun = {id: 1,name: 'M4-A1', like: 0, likes: false};
+  selectedGun: Gun = this.gun;
 
-    licznik(gun: Gun): void {
-        gun.like++;
-     }
+  like(gun: Gun): void { 
+      gun.like++;
+  }
 
-    onSelect(gun: Gun): void {
-       this.selectedGun = gun;
+  unlike(gun: Gun): void { 
+    if (gun.like >= 1)
+    {
+      gun.like--;
+    }
+  }
+
+  onSelect(gun: Gun): void {
+    this.selectedGun = gun;
   }
 
   onSort():void{
@@ -126,18 +43,18 @@ export class Gun {
   id: number;
   name: string;
   like: number;
+  likes: boolean;
 }
 const GUNS: Gun[] = [
-  { id: 1, name: 'M4-A1', like:0 },
-  { id: 2, name: 'AK-47', like:0 },
-  { id: 3, name: 'RPG', like:0 },
-  { id: 4, name: 'Glock', like:0 },
-  { id: 5, name: 'Desert Eagle', like:0 },
-  { id: 6, name: 'PKM', like:0 },
-  { id: 7, name: 'MP5', like:0 },
-  { id: 8, name: 'Uzi', like:0 },
-  { id: 9, name: 'Fal', like:0 },
-  { id: 10, name: 'Dragunov SWD', like:0 }
+  { id: 1, name: 'M4-A1', like:Math.floor((Math.random() * 100) + 1), likes: false},
+  { id: 2, name: 'AK-47', like:Math.floor((Math.random() * 100) + 1), likes: false},
+  { id: 3, name: 'RPG', like:Math.floor((Math.random() * 100) + 1), likes: false},
+  { id: 4, name: 'Glock', like:Math.floor((Math.random() * 100) + 1), likes: false},
+  { id: 5, name: 'Desert Eagle', like:Math.floor((Math.random() * 100) + 1), likes: false},
+  { id: 6, name: 'PKM', like:Math.floor((Math.random() * 100) + 1), likes: false},
+  { id: 7, name: 'MP5', like:Math.floor((Math.random() * 100) + 1), likes: false},
+  { id: 8, name: 'Uzi', like:Math.floor((Math.random() * 100) + 1), likes: false},
+  { id: 9, name: 'Fal', like:Math.floor((Math.random() * 100) + 1), likes: false},
+  { id: 10, name: 'Dragunov SWD', like:Math.floor((Math.random() * 100) + 1), likes: false}
 ];
-
 

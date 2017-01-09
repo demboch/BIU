@@ -1,1 +1,113 @@
 /* You can add global styles to this file, and also import other style files */
+
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}
+
+.guns {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 960px;
+}
+
+.guns li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    width: 400px;
+    border-radius: 4px;
+}
+
+.guns li.selected:hover {
+    background-color: #BBD8DC !important;
+    color: white;
+}
+
+.guns li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+
+
+/*.guns .text {
+    position: relative;
+    top: -3px;
+}*/
+
+.guns .badge {
+    float: left;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: black;
+    line-height: 1em;
+    position: relative;
+    top: -20px;
+    height: 1.8em;
+    border-radius: 4px 0 0 4px;
+}
+
+p {
+    position: relative;
+    top: -12px;
+    left: 10px;
+}
+
+.like {
+    float: right;
+    left: 140px;
+    position: relative;
+    top: -51px;
+    transition: all .2s ease-in-out;
+}
+
+.like:hover {
+    transform: scale(0.9);
+}
+
+.unlike {
+    float: right;
+    left: 410px;
+    position: relative;
+    top: -51px;
+    transition: all .2s ease-in-out;
+}
+
+.unlike:hover {
+    transform: scale(0.9);
+}
+
+.button {
+    background-color: #6a00ff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    float: right;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 130px;
+}
+
+.sort {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #6a00ff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+    color: white;
+    margin-left: 20px;
+}
+
+.sort:hover {
+    transform: scale(1.1);
+}

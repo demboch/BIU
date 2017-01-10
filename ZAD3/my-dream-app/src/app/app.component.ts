@@ -12,13 +12,18 @@ export class AppComponent {
   selectedGun: Gun = this.gun;
 
   like(gun: Gun): void { 
+   if(gun.likes != true)
+   {
       gun.like++;
+      gun.likes = true;
+    }  
   }
 
   unlike(gun: Gun): void { 
-    if (gun.like >= 1)
+    if (gun.like >= 1 && gun.likes != false)
     {
       gun.like--;
+      gun.likes = false;
     }
   }
 

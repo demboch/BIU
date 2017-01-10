@@ -70,6 +70,7 @@ p {
 
 .like:hover {
     transform: scale(0.9);
+    color: lime;
 }
 
 .unlike {

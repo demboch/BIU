@@ -1,17 +1,18 @@
 <div class="container">
     <div class="weaponselect" *ngIf="selectedGun">
         <h2>Selected weapon: {{selectedGun.name}}</h2>
-        <!--<div><label>id: </label>{{selectedGun.id}}</div>
-        <div><label>like: </label>{{selectedGun.like}}</div>-->
+        <div><label>Id: </label>{{selectedGun.id}}</div>
+        <div><label>Like: </label>{{selectedGun.like}}</div>
+        <div><label>Country: </label>{{selectedGun.country}}</div>
         <div>
-            <label>weapon name: </label>
+            <label>Weapon name: </label>
             <input [(ngModel)]="selectedGun.name" placeholder="weapon name" />
         </div>
     </div>
 
     <div class="form">
-        <button class="sort" (click)="showForm()">Dodaj Bron</button>
         <my-dashboard *ngIf="isForm<0" (addToList)="addGun($event)"></my-dashboard>
+        <button class="buttonForm" (click)="showForm()">Formularz</button>
     </div>
 </div>
 

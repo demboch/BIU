@@ -52,7 +52,6 @@ export class AppComponent {
   addGun(event):void{
 		this.guns.push(new Gun(this.guns.length+1, event.bron.name, event.bron.country, event.bron.like));
 			console.log(event);
-		//	this.clearData();
 	}
 }
 

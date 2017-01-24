@@ -178,3 +178,21 @@ p {
 .buttonSend:hover {
     transform: scale(1.1);
 }
+
+.buttonReset {
+    top: 50px;
+    position: absolute;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #6a00ff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+    color: white;
+    margin-left: 20px;
+}
+
+.buttonReset:hover {
+    transform: scale(1.1);
+}

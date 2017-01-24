@@ -1,0 +1,20 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="addGun()">
+        <label>Bron: </label>
+        <input formControlName="name" placeholder="Name" id="name"><br>
+        <div *ngIf="!form.controls['name'].valid">
+            <div class="error">
+                <strong>Nazwa od 4 do 10 znaków!</strong>
+            </div>
+        </div>
+        <label>Kraj: </label>
+        <input formControlName="country" placeholder="Country">
+        <div *ngIf="!form.controls['country'].valid">
+            <div class="error">
+                <strong>Kraj jest wymagany!</strong>
+            </div>
+        </div>
+        <button class="sort" type="submit">Wyślij</button>
+
+    </form>
+</div>
